@@ -18,7 +18,7 @@
           </li>
   
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">About</a>
+          <a class="nav-link active" aria-current="page" href="/about">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Process</a>
@@ -48,6 +48,7 @@
                   <p>Party: <%= candidates[i].party %></p>
                   <p>Age: <%= candidates[i].age %></p>
                   <p>ID: <%= candidates[i].id %></p>
+                  <p>Vote Count : <%= candidates[i].voteCount %></p>
               </div>
           <% } %>
       </div>
@@ -55,8 +56,11 @@
       <form action="/candidate/vote/candidates" method="post">
       <div class="votebox">
 
-       <label for="candidateID"> Candidate Id: <input id="candidateID" name="candidateID" type="text"> </label> &nbsp; &nbsp; &nbsp;
-        <button type="button" class="btn btn-success"> <input type="submit" value="Submit"></button>        
+        <label for="aadharCardNumber"> Your Aadhaar Number: <input id="name" type="number" name="aadharCardNumber" placeholder=" Aadhar Number " type="text"> </label> &nbsp; &nbsp; &nbsp;
+         &nbsp; &nbsp; &nbsp;
+
+       <label for="name"> Candidate Name: <input id="name" name="name" placeholder=" Your Party Leader Name " type="text"> </label> &nbsp; &nbsp; &nbsp;
+        <button type="button" class="btn btn-success"> <input type="submit" class="btn btn-success" value="Submit"></button>        
       </div>
     </form>
       <div style="display: flex; padding: 25px; justify-content: center; align-items: center; background-color: rgb(5, 24, 45);">

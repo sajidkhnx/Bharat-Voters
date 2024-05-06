@@ -105,80 +105,55 @@ router.delete('/:candidateID', verifyToken, async (req, res)=>{
     }
 })
 
-// let's start voting
+// let's  vote
+router.get('/vote/candidates/Success',  (req, res) => {
+    res.render('Vote_success');
+  }); 
 router.get('/vote/candidates', verifyToken, async  (req, res) => {
     const candidates = await Candidate.find();
     res.render('cand_vote', { candidates });
   });   
-// // router.post('/vote/:candidateID', verifyToken, async (req, res)=>{
-//     router.post('/vote/candidates', verifyToken, async (req, res)=>{
-//     // no admin can vote
-//     // user can only vote once
-   
+    router.post('/vote/candidates', verifyToken, async (req, res)=>{
+    // no admin can vote
+    // user can only vote once
 
-//     // candidateID = req.params.candidateID;
-//     const name = req.body;
-//     // console.log(candidateID);
-//     const userId = "6633c42c5d4be76438e5a913";
+    const {name} = req.body;
+    const {aadharCardNumber} = req.body;
+    try{
+        // Find the Candidate document with the specified candidateID
+        const candidate = await Candidate.findOne({name});
+        console.log("Candidate id ", candidate);
+        if(!candidate){
+            return res.status(404).json({ message: 'Candidate not found' });
+        }
 
+        const user = await User.findOne({aadharCardNumber});
+        if(!user){
+            return res.status(404).json({ message: 'user not found' });
+        }
+        if(user.role == 'admin'){
+            return res.status(403).json({ message: 'admin is not allowed'});    
+        }
+        if(user.isVoted){
+            return res.status(400).json({ message: 'You have already voted' });
+        }
 
-//     try{
-//         // Find the Candidate document with the specified candidateID
-//         const candidate = await Candidate.findOne({name});
-//         console.log("Candidate id ", candidate);
-//         if(!candidate){
-//             return res.status(404).json({ message: 'Candidate not found' });
-//         }
+        // Update the Candidate document to record the vote
+        // candidate.votes.push({user: userId})
+        candidate.voteCount++;  
+        await candidate.save(); 
 
-//         const user = await User.findById(userId);
-//         if(!user){
-//             return res.status(404).json({ message: 'user no+t found' });
-//         }
-//         if(user.role == 'admin'){
-//             return res.status(403).json({ message: 'admin is not allowed'});
-//         }
-//         if(user.isVoted){
-//             return res.status(400).json({ message: 'You have already voted' });
-//         }
-
-//         // Update the Candidate document to record the vote
-//         candidate.votes.push({user: userId})
-//         candidate.voteCount++;  
-//         await candidate.save(); 
-
-//         // update the user document
-//         user.isVoted = true
-//         await user.save();
-
-//         return res.status(200).json({ message: 'Vote recorded successfully' });
-//     }catch(err){
-//         console.log(err);
-//         return res.status(500).json({error: 'Internal Server Error'});
-//     }
-// });
-
-
-router.post('/vote/candidates', verifyToken, async (req, res) => {
-    const userId = "6633c42c5d4be76438e5a913";
-    const { name } = req.body;
-    try {
-      // Find user by name or create a new user if not found
-      const candidate = await Candidate.findOne({ name });
-      const user = await User.findById(userId);
-      // Increment vote count
-      candidate.votes.push({user: userId});
-     
-      candidate.voteCount++;
-      // Save the user
-    //   await candidate.save();
-    
-   await candidate.save();
-      res.send('success');
-    } catch (err) {
-      console.error(err);
-      res.status(500).send('Server Error');
+        // update the user document
+        user.isVoted = true
+        await user.save();
+        res.redirect('/vote/candidates/Success');
+        // return res.status(200).json({ message: 'Vote recorded successfully' });
+    }catch(err){
+        console.log(err);
+        return res.status(500).json({error: 'Internal Server Error'});
     }
-  });
+});
+
 
 // vote count 
 router.get('/vote/count', async (req, res) => {
@@ -190,7 +165,7 @@ router.get('/vote/count', async (req, res) => {
         const voteRecord = candidate.map((data)=>{
             return {
                 party: data.party,
-                count: data.voteCount
+                count: data.voteCount   
             }
         });
 

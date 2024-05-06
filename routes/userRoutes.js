@@ -97,6 +97,14 @@ router.post('/login', async(req, res) => {
     }
 });
 
+// about route
+
+router.get('/about' , (req, res) => {
+    
+    
+        res.render('aboutpage');
+})
+
 // Profile route
 
 router.get('/profile',verifyToken ,async (req, res) => {
