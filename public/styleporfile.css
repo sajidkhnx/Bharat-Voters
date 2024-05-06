@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.nav{
+    background-color: rgb(5, 24, 45);
+    color: white;
+    height: 50px;
+    font-size: larger;
+    
+}
+.stagname{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-family: "Poppins";
+  font-size: larger;
+  justify-content: left;
+  font-weight: 600;
+  padding-top: 12px;
+  padding-left: 15px;
+}
+.nav-link{
+    color: white;
+    padding-inline: 30px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    background-color: white;
+    height: 550;
+    width: 45%;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius: 5%;
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+span {
+    display: block; /* shows text as a block-level element */
+  }
+  .con_1{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+
+
+  .con_2{
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    float: right;
+  }
+
+  .stagname2{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: "Poppins";
+    font-size: small;
+    justify-content: left;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+
+/* vote */
+
+.votebox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

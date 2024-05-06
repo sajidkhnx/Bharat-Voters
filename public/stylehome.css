@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.nav{
+    background-color: rgb(5, 24, 45);
+    color: white;
+    height: 50px;
+    font-size: larger;
+    
+}
+.stagname{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-family: "Poppins";
+  font-size: larger;
+  justify-content: left;
+  font-weight: 600;
+  padding-top: 12px;
+  padding-left: 15px;
+}
+.nav-link{
+    color: white;
+    padding-inline: 30px;
+}
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* centers flexed text horizontally */
+    align-items: center; /* centers flexed text vertically */
+    height:400px ;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  span {
+    display: block; /* shows text as a block-level element */
+  }
+  .heading{
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-weight: 1000;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+  .head-below{
+    font-size: 30px;
+    font-weight: 100;
+  }
+  .head-below2{
+    font-size: 25px;
+    font-weight: 100;
+  }
+  .btn-secondary{
+   width: 200px;
+    font-size: x-large; 
+  }
+
+  /* head end */
+  
+  .img_vote2{
+  height: 500px;
+  padding: 20px;
+  width: fit-content;
+}
+body, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the content container */
+.content {
+  display: flex;
+ width: 100% ; /* Adjust as needed */
+  margin: 0 auto; /* Center the content horizontally */
+  overflow: hidden; /* Clear floats */
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-weight: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the floating image */
+.float-right {
+  float: right;
+  margin-left: 10px; /* Add space between text and image */
+  height: 500px;
+  padding: 20px;
+  width: fit-content;
+}
+
+/* Style the text content */
+.text2 {
+  text-align: center;
+  justify-content: center;
+  float: left;
+  flex-grow: 1;
+  }
+  
+  .content_second{
+    display: flex;
+ width: 100% ; /* Adjust as needed */
+  margin: 0 auto; /* Center the content horizontally */
+  overflow: hidden; /* Clear floats */
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-weight: 1000;
+  justify-content: center;
+  align-items: center;
+    height: 500px;
+  }
+  .content_third{
+    display: flex;
+ width: 100% ; /* Adjust as needed */
+  margin: 0 auto; /* Center the content horizontally */
+  overflow: hidden; /* Clear floats */
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-weight: 1000;
+  justify-content: center; 
+   align-items: center; 
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+  }
+  .text2 {
+    text-align: left;
+    justify-content: left;
+   padding-left: 90px;
+    flex-grow: 1;
+    }
+
+    .stagname2{
+      position: absolute;
+      color: rgb(255, 255, 255);
+      font-family: "Poppins";
+      font-size: small;
+      justify-content: left;
+      font-weight: 600;
+      padding-top: 15px;
+      padding-left: 15px;
+    }
