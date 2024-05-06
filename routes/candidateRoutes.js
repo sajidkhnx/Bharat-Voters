@@ -167,8 +167,8 @@ router.post('/vote/candidates', verifyToken, async (req, res) => {
       const user = await User.findById(userId);
       // Increment vote count
       candidate.votes.push({user: userId});
+     
       candidate.voteCount++;
-  
       // Save the user
     //   await candidate.save();
     
