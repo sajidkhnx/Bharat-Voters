@@ -100,11 +100,13 @@ router.post('/login', async(req, res) => {
 // about route
 
 router.get('/about' , (req, res) => {
-    
-    
         res.render('aboutpage');
-})
+});
 
+// process route
+router.get('/process' , (req, res) => {
+    res.render('Process');
+});
 // Profile route
 
 router.get('/profile',verifyToken ,async (req, res) => {
