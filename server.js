@@ -25,6 +25,18 @@ app.get('/bharatvoter' , async (req, res) => {
       
   });
 
+  app.get('/process??' , async (req, res) => {
+    
+    res.render('logout_process'); 
+  
+});
+
+app.get('/about??' , async (req, res) => {
+    
+  res.render('logout_aboutpage'); 
+
+});
+
 app.listen(PORT, ()=>{
     console.log('listening on port 7000');
 })

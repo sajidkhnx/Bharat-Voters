@@ -129,13 +129,16 @@ router.get('/vote/candidates', verifyToken, async  (req, res) => {
 
         const user = await User.findOne({aadharCardNumber});
         if(!user){
-            return res.status(404).json({ message: 'user not found' });
+            res.send("User not found! Please Register to vote || कृपया वोट करने के लिए पंजीकरण करें ! ")
+            // return res.status(404).json({ message: 'user not found' });
         }
         if(user.role == 'admin'){
-            return res.status(403).json({ message: 'admin is not allowed'});    
+            res.send("Admin is not allowed !! || व्यवस्थापक को अनुमति नहीं है !!")
+            // return res.status(403).json({ message: 'admin is not allowed'});    
         }
         if(user.isVoted){
-            return res.status(400).json({ message: 'You have already voted' });
+            res.send("You have already voted || आप पहले ही वोट कर चुके हैं")
+            // return res.status(400).json({ message: 'You have already voted' });
         }
 
         // Update the Candidate document to record the vote
