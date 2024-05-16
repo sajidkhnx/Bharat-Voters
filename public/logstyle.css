@@ -12,7 +12,9 @@ body{
   align-items: center;
   justify-content: center;
   /* background: #dbdbdb; */
-  background-image: url('/PICTURE/Srinagar.jpg');
+  background-image: url('/PICTURE/logback.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 30px;
 }
 .container{

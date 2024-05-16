@@ -129,7 +129,7 @@ router.get('/vote/candidates', verifyToken, async  (req, res) => {
 
         const user = await User.findOne({aadharCardNumber});
         if(!user){
-            res.send("User not found! Please Register to vote || कृपया वोट करने के लिए पंजीकरण करें ! ")
+            res.send("User not found!   Please Register to vote || कृपया वोट करने के लिए पंजीकरण करें ! ")
             // return res.status(404).json({ message: 'user not found' });
         }
         if(user.role == 'admin'){
