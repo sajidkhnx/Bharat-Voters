@@ -11,8 +11,8 @@ const tour = new Shepherd.Tour({
 
 // Add steps to the tour
 tour.addStep({
-  title: 'Welcome to the To-Do Planner',
-  text: 'This is a simple to-do list app built with Shepherd.js. Let me show you around!',
+  title: 'Welcome to Bharat Voters',
+  text: 'This is Digital Voting System for Digital India. Let me show you around!',
   attachTo: {
     element: '.stagname',
     on: 'bottom',
@@ -28,10 +28,10 @@ tour.addStep({
 });
 
 tour.addStep({
-  title: 'Add a new task',
-  text: 'Type your task in the input field and click "Add" to add it to the list.',
+  title: 'Process',
+  text: 'Click to know the Step by Step Procedure for Voting',
   attachTo: {
-    element: '#myInput',
+    element: '#know',
     on: 'bottom',
   },
   buttons: [
@@ -52,10 +52,10 @@ tour.addStep({
 });
 
 tour.addStep({
-  title: 'Mark tasks as complete',
-  text: 'Click on a task to mark it as complete. The task will be crossed out.',
+  title: 'Checkout your profile!',
+  text: 'Get Your all info at one place.',
   attachTo: {
-    element: '#myUL',
+    element: '#prof',
     on: 'top',
   },
   buttons: [
@@ -76,10 +76,34 @@ tour.addStep({
 });
 
 tour.addStep({
-  title: 'Remove tasks',
-  text: 'Click on the "×" button next to a task to remove it from the list.',
+  title: 'Confuse whome to vote? Know Your Candidates!',
+  text: 'Meet the Candidates and choose your Democratic Leader !',
   attachTo: {
-    element: '.close',
+    element: '#meet',
+    on: 'left',
+  },
+  buttons: [
+    {
+      action() {
+        return this.back();
+      },
+      classes: 'shepherd-button-secondary',
+      text: 'next',
+    },
+    {
+      action() {
+        return this.next();
+      },
+      text: 'Next',
+    },
+  ],
+});
+
+tour.addStep({
+  title: 'Vote here and see the live counts !',
+  text: 'Input Aadhaar and Vote Your party and know who wins.',
+  attachTo: {
+    element: '#voten',
     on: 'left',
   },
   buttons: [
