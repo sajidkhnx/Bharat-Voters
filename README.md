@@ -5,12 +5,12 @@ For Data Storage and Protection this plateforms is linked with MongoDB Database.
 Shepherd js is used in this projest that provides a a journey guide through the project which enables user to interact in a convinient way.
 
 # Table of Content:
-* App Features
-* Backend 
-* Frontend
-* Demo
-* License
-* Contact
+* [App Features](#App Features)
+* [Backend] (#Backend)
+* [Frontend] (#Frontend)
+* [Demo] (#Demo)
+* [License] (#License)
+* [Contact] (#Contact)
 
 ## App Features :
 * Enables Voting System Digitally with Aadhaar .
@@ -38,8 +38,11 @@ Shepherd js is used in this projest that provides a a journey guide through the 
 * Shepherd.js for guided tour 
 * Profile Dashboard 
 
+## Demo
+Check out a live demo of the application [here](https://your-demo-link.com).
+
 ## License 
- Distributed under the MIT License. See LICENSE for more information.
+ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact 
 Mohd Sajid Khan- sajidkhnx.dev07@gmail.com
